@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+<body>
+    <div id="root"></div>
+
+
+
+    <script type="text/babel">
+    function Students(){
+        let students = [
+            {
+                name:"alexa",
+                age:12,
+                marks:777
+            },
+            {
+                name:"dibya",
+                age:22,
+                marks:34377
+            },
+            {
+                name:"nira",
+                age:18,
+                marks:767
+            },
+            {
+                name:"exa",
+                age:92,
+                marks:666
+            }
+        ]
+        
+        return(
+            <>
+            <h1> Stdents object</h1>
+           <table>
+            <thead>
+               <tr>
+                  <th>Name</th>
+                  <th>AGE</th>
+                  <th>Marks</th>
+               </tr>
+            </thead>
+            <tbody>  
+               {students.map((student,index )=>(
+                    
+                   <tr key="index">
+                      <td>{student.name}</td>
+                      <td>{student.age}</td>
+                      <td>{student.marks}</td>
+                    </tr>
+                   
+
+        ))} 
+        </tbody> 
+            </table>
+             
+
+            </>
+        )
+    }
+
+
+
+
+    function CarPage(){
+        let cars = [
+            {
+                name:"BMW",
+                avg:12,
+                img:"https://tse1.mm.bing.net/th?id=OIP.v3PyNrtmLOtvU9oVoXJZiQHaF7&pid=Api&rs=1&c=1&qlt=95&w=139&h=111"
+            },
+            {
+                name:"nexa",
+                avg:15,
+                img:"https://tse1.mm.bing.net/th?id=OIP.v3PyNrtmLOtvU9oVoXJZiQHaF7&pid=Api&rs=1&c=1&qlt=95&w=139&h=111"
+            },
+            {
+                name:"Tata",
+                avg:66,
+                img:"https://tse1.mm.bing.net/th?id=OIP.v3PyNrtmLOtvU9oVoXJZiQHaF7&pid=Api&rs=1&c=1&qlt=95&w=139&h=111"
+            },
+            {
+                name:"dgd",
+                avg:62,
+                img:"https://tse1.mm.bing.net/th?id=OIP.v3PyNrtmLOtvU9oVoXJZiQHaF7&pid=Api&rs=1&c=1&qlt=95&w=139&h=111"
+            }
+        ]
+
+        return(
+            <>
+               
+              <h1>car details</h1>
+              <table className="tab">
+                <thead>
+                    <tr>
+                        <th>IMAGE</th>
+                        <th>Name</th>
+                        <th>Average</th>
+                        
+                    </tr>
+                </thead>
+                
+
+                    {cars.map((n,index)=>(
+                        <tr key={index}>
+                            <td><img src={n.img}/></td>
+
+                            <td>{n.name}</td>
+                            <td>{n.avg}</td>
+
+
+                        </tr>
+                    ))}
+               
+            </table>
+
+  
+              
+            </>
+        )
+    }
+
+  // conditnal redring
+    function pp(){
+        let showcars = false;
+
+        if(showcars){
+            return <CarPage/>
+        }
+        return(
+            <>
+            <Students/>
+           
+
+
+            </>
+        )
+
+    }
+
+
+    function App(){
+        let logedin = true;
+        return(
+            <>
+              <h1>Hello {logedin?"Alexa":"user"}!</h1>
+              {logedin && <p> WElcom to the portal</p>}
+            </>
+        )
+    }
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+
+    </script>
+</body>
+</html>
