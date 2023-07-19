@@ -21,6 +21,7 @@ export default function Blog(){
         setBlogs( blogs.filter((blog,index)=> index !== i));
  
      }
+     
 
     return(
         <>
